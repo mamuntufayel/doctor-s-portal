@@ -5,6 +5,8 @@ import Appointment from "./Components/Pages/Appointment/Appointment";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
 import Home from "./Components/Pages/Home/Home";
 import Login from "./Components/Pages/Login/Login";
+import Register from "./Components/Pages/Login/Register";
+import RequireAuth from "./Components/Pages/RequireAuth/RequireAuth";
 import Reviews from "./Components/Pages/Reviews/Reviews";
 
 import Header from "./Components/Pages/Shares/Header";
@@ -19,11 +21,16 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route
           path="/appointment"
-          element={<Appointment></Appointment>}
+          element={
+            <RequireAuth>
+              <Appointment></Appointment>
+            </RequireAuth>
+          }
         ></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<Register></Register>}></Route>
       </Routes>
     </div>
   );

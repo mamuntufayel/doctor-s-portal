@@ -18,12 +18,12 @@ const Appointment = () => {
   }, []);
   return (
     <div>
-      <div style={{ background: `url(${bg})` }} class="hero min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse">
+      <div style={{ background: `url(${bg})` }} className="hero min-h-screen">
+        <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src={chair}
             alt="doctor's chair img"
-            class="max-w-sm rounded-lg shadow-2xl"
+            className="max-w-sm rounded-lg shadow-2xl"
           />
           <div>
             <DayPicker mode="single" selected={date} onSelect={setDate} />
